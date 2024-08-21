@@ -3,7 +3,7 @@
 **ID**:CT08DS5838
 **Domain**:Python Programming 
 **Duration**:AUGUST 2024 to SEPTEMBER 2024
-**Mentor**:
+**Mentor**:Neela santhosh kumar
 
 ## Overview of this project
 ## Project: Create a Python program to create a student grade calculator.

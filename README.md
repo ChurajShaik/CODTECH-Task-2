@@ -7,6 +7,12 @@
 
 ## Overview of this project
 ## Project: Create a Python program to create a student grade calculator.
+![image](https://github.com/user-attachments/assets/1db1e836-68e0-46ed-9c9a-904e909ebb6b)
+
+
+
+
+
 
 ### objective
 The objective of this project is to create a student grade calculator by giving the marks of the subjects and it calculates average marks of all the subjects and gives the overall GPA

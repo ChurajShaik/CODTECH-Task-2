@@ -1,0 +1,67 @@
+/**Program of a student grade calculator**/
+
+
+def get_grade(letter):
+    """Return the letter grade based on the numeric grade."""
+    if 90 <= letter <= 100:
+        return 'A'
+    elif 80 <= letter < 90:
+        return 'B'
+    elif 70 <= letter < 80:
+        return 'C'
+    elif 60 <= letter < 70:
+        return 'D'
+    else:
+        return 'F'
+
+def calculate_gpa(numeric_grade):
+    """Calculate GPA based on numeric grade (on a scale of 0 to 100)."""
+    if 90 <= numeric_grade <= 100:
+        return 4.0
+    elif 80 <= numeric_grade < 90:
+        return 3.0
+    elif 70 <= numeric_grade < 80:
+        return 2.0
+    elif 60 <= numeric_grade < 70:
+        return 1.0
+    else:
+        return 0.0
+
+def main():
+    print("Student Grade Management System")
+    print("===============================")
+    
+    grades = {}
+    
+    while True:
+        subject = input("Enter the subject or 'done' to finish: ")
+        if subject.lower() == 'done':
+            break
+        try:
+            grade = float(input(f"Enter the grade for {subject}: "))
+            if grade < 0 or grade > 100:
+                raise ValueError("Grade must be between 0 and 100.")
+            grades[subject] = grade
+        except ValueError as e:
+            print(e)
+            print("Please enter a valid number between 0 and 100.")
+    
+    if not grades:
+        print("No grades were entered.")
+        return
+    
+    total_grades = sum(grades.values())
+    average_grade = total_grades / len(grades)
+    
+    print("\nGrade Summary:")
+    for subject, grade in grades.items():
+        print(f"{subject}: {grade:.2f} ({get_grade(grade)})")
+    
+    print(f"\nAverage Grade: {average_grade:.2f}")
+    print(f"Letter Grade: {get_grade(average_grade)}")
+    
+    gpa = calculate_gpa(average_grade)
+    print(f"GPA: {gpa:.2f}")
+
+if __name__ == "__main__":
+    main()
